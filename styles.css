@@ -1,0 +1,12 @@
+img{
+    max-width: 20%;
+}
+.grid-container{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    background-color: rgba(57, 57, 57, 50%);
+}
+.Title{
+    display: flex;
+    justify-content: center;
+}

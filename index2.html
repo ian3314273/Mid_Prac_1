@@ -6,22 +6,29 @@
     <title>Image Grid</title>
     <style>
         .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 自适应调整列数 */
-            gap: 5px; /* 图片之间的间距 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* 图片居中显示 */
         }
 
-        .image-grid-item {
-            max-width: 100px; /* 每张图片的最大宽度 */
-            max-height: 100px; /* 每张图片的最大高度 */
-            overflow: hidden; /* 超出部分隐藏 */
+        img {
+            width: auto; /* 图片宽度填充父容器 */
+            height: 100%; /* 图片高度自适应 */
+            max-height: 300px; /* 图片最大高度 */
+            margin:5px;
         }
 
-        .image-grid-item img {
-            width: 100%; /* 图片宽度填充父容器 */
-            height: 100%; /* 图片高度填充父容器 */
-            display: block; /* 去除图片默认间距 */
-        }
+        /*@media (max-width: 768px) {*/
+        /*    .image-grid-item {*/
+        /*        flex: 0 0 calc(50% - 10px); !* 在小于 768px 的屏幕尺寸下，每个图片容器宽度为父容器宽度的一半，减去间距 *!*/
+        /*    }*/
+        /*}*/
+
+        /*@media (max-width: 480px) {*/
+        /*    .image-grid-item {*/
+        /*        flex: 0 0 calc(100% - 10px); !* 在小于 480px 的屏幕尺寸下，每个图片容器宽度为父容器宽度，减去间距 *!*/
+        /*    }*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -64,7 +71,6 @@
     </div>
     <div class="image-grid-item">
         <img src="imgs/13.jpg" alt="Image 13">
-    </div>
     </div>
 </div>
 </body>
